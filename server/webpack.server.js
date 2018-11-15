@@ -1,5 +1,5 @@
 const merge = require('webpack-merge');
-const nodeExternals = require('webpack-node-externals');
+const webpackNodeExternals = require('webpack-node-externals');
 const path = require('path');
 
 const baseConfig = require('./webpack.base');
@@ -8,7 +8,6 @@ const config = {
   // Inform webpack that we're building a bundle for nodeJS, rather
   // than for the browser
   target: 'node',
-  externals: nodeExternals(),
 
   // Tell webpack the root file of our server application
   entry: './src/index.js',
@@ -17,7 +16,9 @@ const config = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build')
-  }
+  },
+
+  externals: [webpackNodeExternals()]
 };
 
 module.exports = merge(baseConfig, config);
