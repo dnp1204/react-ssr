@@ -2,7 +2,7 @@ import express from 'express';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import Home from './components/Home';
+import Home from './client/components/Home';
 
 const app = express();
 
