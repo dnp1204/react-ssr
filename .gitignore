@@ -2,6 +2,8 @@
 # Created by https://www.gitignore.io/api/git,node,macos,windows,serverless,reactnative,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=git,node,macos,windows,serverless,reactnative,visualstudiocode
 
+public
+
 ### Git ###
 # Created by git for backups. To disable backups in Git:
 # $ git config --global mergetool.keepBackup false
