@@ -1,5 +1,6 @@
 import 'babel-polyfill';
 
+import axios from 'axios';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -11,10 +12,14 @@ import thunk from 'redux-thunk';
 import reducers from './reducers';
 import Routes from './Routes';
 
+const axiosInstance = axios.create({
+  baseURL: '/api'
+});
+
 const store = createStore(
   reducers,
   window.INITIAL_STATE,
-  applyMiddleware(thunk)
+  applyMiddleware(thunk.withExtraArgument(axiosInstance))
 );
 
 ReactDOM.hydrate(
